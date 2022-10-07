@@ -1,0 +1,142 @@
+:root {
+    --gap-size: 20px;
+    --calc-height: 500px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: default;
+}
+
+.calculator-container {
+    border: black 10px solid;
+    background-color: lightcyan;
+    height: var(--calc-height);
+    width: var(--calc-height);
+    display: grid;
+    grid-template:
+        "display display display display display"
+        "number number number operators clear"
+        "number number number operators other"
+        "number number number operators other"
+        "number number number operators equals";
+    column-gap: var(--gap-size);
+    row-gap: var(--gap-size);
+    padding: var(--gap-size) var(--gap-size) var(--gap-size) var(--gap-size);
+    position: absolute;
+    top: var(--gap-size);
+    left: var(--gap-size);
+}
+
+.calc-displays {
+    grid-area: display;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    border: 2px black solid;
+    height: 100%;
+    width: 100%;
+}
+
+.calc-small-display {
+    height: 40%;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.calc-display {
+    height: 60%;
+    width: 100%;
+    background-color: lightgray;
+    font-size: 4em;
+    text-align: right;
+}
+
+.calc-numbers {
+    grid-area: number;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: var(--gap-size);
+    row-gap: var(--gap-size);
+}
+
+.calc-btn {
+    height: 100%;
+    width: 100%;
+}
+
+.calc-equals {
+    grid-area: equals;
+}
+
+.calc-clear {
+    grid-area: clear;
+}
+
+.calc-operators {
+    grid-area: operators;
+    display: flex;
+    flex-direction: column;
+    column-gap: var(--gap-size);
+    row-gap: var(--gap-size);
+}
+
+.calc-operator {
+    height: 25%;
+}
+
+button {
+    outline: none;
+    border: black 1px solid;
+    border-radius: 4px;
+    font-size: 2em;
+}
+
+.operator-btn {
+    background-color: rgb(180, 180, 180);
+}
+
+.operator-btn:hover {
+    background-color: rgb(160, 160, 160);
+}
+
+.operator-btn:active {
+    background-color: rgb(140, 140, 140);
+}
+
+.equals-btn {
+    background-color: rgb(255, 0, 0);
+}
+
+.equals-btn:hover {
+    background-color: rgb(225, 0, 0);
+}
+
+.equals-btn:active {
+    background-color: rgb(195, 0, 0);
+}
+
+.clear-btn {
+    background-color: rgb(255, 165, 0);
+}
+
+.clear-btn:hover {
+    background-color: rgb(235, 145, 0);
+}
+
+.clear-btn:active {
+    background-color: rgb(225, 125, 0);
+}
+
+.number-btn {
+    background-color: rgb(250, 250, 250);
+}
+
+.number-btn:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.number-btn:active {
+    background-color: rgb(210, 210, 210);
+}
